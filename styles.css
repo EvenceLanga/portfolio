@@ -78,6 +78,7 @@ img{
     max-width: 100%;
     height: auto;
 }
+
 .header{
     position: fixed;
     width: 100%;
@@ -120,18 +121,19 @@ img{
     margin-right: 20px;
     color: var(--first-color);
 }
+
 /* For small screens */
 @media screen and (max-width: 768px) {
     .nav__toggle {
         display: block; /* Show the toggle button on smaller screens */
     }
     .nav__menu {
-        display: none; /* Hide the menu by default on small screens */
+        flex-direction: column;   
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh;
+        height: auto;
         background-color: rgb(67, 66, 66);
         padding-top: var(--header-height); /* Adjust padding to account for header height */
         text-align: center;
@@ -143,17 +145,18 @@ img{
     }
     .nav__list {
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
         margin: 0;
         padding: 0;
+        justify-content: center; /* Center items horizontally */
     }
     .nav__item {
         list-style: none;
+        text-decoration: none;
     }
     .nav__link {
         display: block;
-        padding: 1rem 0; /* Adjust padding as needed */
+        padding: 1rem; /* Adjust padding as needed */
     }
 }
 
@@ -167,6 +170,7 @@ img{
     }
     .nav__list {
         display: flex;
+        font-size: large;
         gap: 2rem;
         text-align: center;
         margin: 0; /* Reset margin */
